@@ -1,0 +1,28 @@
+**project_progress_summary_updated.txt**
+
+Started with 4 scripts: predict.py (dummy unrelated model), train_fusion.py (single EDA LSTM), data_prep.py (only S2 subject), napp.py (fake Streamlit UI).
+
+Identified main flaws: no real fusion, label noise, no preprocessing, toy model, hardcoded paths, no proper evaluation.
+
+Made production-ready: multi-subject (S2–S17) data prep for ECG+EDA, late-fusion LSTM model, proper train/test split, checkpoint resuming, Streamlit inference with file upload.
+
+Automated data_prep for all subjects 2–17.
+
+Added GPU forcing/check code, checkpoint fix for weights format.
+
+Fixed Streamlit issues: wrong run command, shape errors on .npy, empty files, blank screen, static-looking plots.
+
+Evolved napp.py: fake simulation → real .npy playback → scrolling raw plots + processed window inference + stress level progress bar + final stress display after playback + reset on restart.
+
+Removed physics-related discussion.
+
+Future scope:
+- True real-time sensor input (serial/Bluetooth from wearable)
+- Add HRV feature extraction (RR intervals, LF/HF ratio)
+- Subject-independent training (LOSO CV)
+- More modalities (EEG if new dataset)
+- TFLite/ONNX export for edge devices
+- Graded stress (regression instead of binary)
+- Artifact filtering + bandpass in prep
+- Mobile/web deployment
+- User calibration per person

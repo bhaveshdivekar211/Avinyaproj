@@ -1,0 +1,23 @@
+# Python caches
+__pycache__/
+*.pyc
+
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Ignore massive data files and the Data folder (CRITICAL)
+Data/
+data/
+*.npy
+*.pkl
+*.zip
+*.csv
+
+# Ignore heavy model checkpoints (Keep the final fusion_model.h5)
+models/checkpoint*
+*.weights.h5
+
+# OS generated files
+.DS_Store
